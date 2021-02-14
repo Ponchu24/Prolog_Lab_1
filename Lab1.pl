@@ -9,6 +9,7 @@ man(genadie).
 man(dragosh).
 man(dorin).
 man(dorel).
+man(emil).
 
 woman(aurica).
 woman(ioana).
@@ -20,6 +21,7 @@ woman(rodica).
 woman(ana).
 woman(alina).
 woman(luchia).
+woman(mihaela).
 
 parent(adrian,dorel).
 parent(adrian,dorin).
@@ -53,6 +55,9 @@ parent(alexandru,luchia).
 parent(eudjenia,rodica).
 parent(eudjenia,luchia).
 
+parent(emil,doina).
+parent(mihaela,doina).
+
 men(X):-man(X),write(X),nl,fail.
 women(X):-woman(X),write(X),nl,fail.
 
@@ -72,4 +77,7 @@ husband(X):-husband(Y,X),write(Y),nl.
 
 b_s(X,Y):-mother(Z,X),mother(Z,Y),X\=Y.
 b_s(X):-b_s(Y,X),write(Y),nl,fail.
+
+grand_pa(X,Y):-parent(Z,Y),parent(X,Z),not(mother(X,Z)).
+grand_pas(X):-grand_pa(Y,X),write(Y),nl,fail.
 
