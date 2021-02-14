@@ -90,3 +90,6 @@ grand_pa_and_da(X,Y):-(grand_pa(X,Y),woman(Y);grand_pa(Y,X),woman(X)).
 
 uncle(X,Y):-man(X),b_s(X,Z),parent(Z,Y).
 uncle(X):-uncle(Y,X),write(Y),nl,fail.
+
+w_cousen(X,Y):-woman(X),b_s(Y,Z),parent(Z,X).
+w_cousens(X):-w_cousen(Y,X),write(Y),nl,fail.
