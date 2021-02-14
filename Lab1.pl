@@ -66,3 +66,6 @@ son(X):-son(Y,X),write(Y),nl,fail.
 
 brother(X,Y):-mother(Z,X),mother(Z,Y),man(X),X\=Y.
 brothers(X):-brother(Y,X),write(Y),nl,fail.
+
+husband(X,Y):-parent(X,Z),mother(Y,Z),X\=Y.
+husband(X):-husband(Y,X),write(Y),nl.
