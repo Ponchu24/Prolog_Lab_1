@@ -81,3 +81,6 @@ b_s(X):-b_s(Y,X),write(Y),nl,fail.
 grand_pa(X,Y):-parent(Z,Y),parent(X,Z),not(mother(X,Z)).
 grand_pas(X):-grand_pa(Y,X),write(Y),nl,fail.
 
+grand_da(X,Y):-parent(Z,X),parent(Y,Z),woman(X).
+grand_dats(X):-grand_da(Y,X),write(Y),nl,fail.
+
